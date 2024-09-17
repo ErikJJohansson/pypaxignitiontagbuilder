@@ -52,7 +52,7 @@ def write_tag(ET,parent,aoi_type,tag_name,param_list):
     prop.text = str(aoi_type)
     prop.tail = '\n'
 
-    params = ET.SubElement(prop, "Parameters")
+    params = ET.SubElement(tag, "Parameters")
     params.tail = '\n'
 
     # Add parameters to the alarm
@@ -122,7 +122,7 @@ def main():
         #outfile = appname + '_' + servername + '_AlarmExport.' + 'xml'
         outfile = plc_name + '_IgnitionTags.' + 'xml'
         # Write the XML tree to a file with UTF-16 encoding
-        tree.write(outfile, encoding="utf-16", xml_declaration=False,short_empty_elements=False)
+        tree.write(outfile, encoding="utf-8", xml_declaration=False,short_empty_elements=False)
     else:
         print("No instances of type in PLC")
 

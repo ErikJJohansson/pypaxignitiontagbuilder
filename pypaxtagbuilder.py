@@ -120,7 +120,7 @@ def main():
 
         # add plc name to file and save to new file
         #outfile = appname + '_' + servername + '_AlarmExport.' + 'xml'
-        outfile = plc_name + '_IgnitionTags.' + 'xml'
+        outfile = plc_name + '_' + input_AOI + '_IgnitionTags.' + 'xml'
         # Write the XML tree to a file with UTF-16 encoding
         tree.write(outfile, encoding="utf-8", xml_declaration=False,short_empty_elements=False)
     else:
